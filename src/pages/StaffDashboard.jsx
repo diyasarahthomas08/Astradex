@@ -17,7 +17,6 @@ const StaffDashboard = () => {
     const userJoiningDate = profile?.created_at
         ? formatDate(profile.created_at)
         : 'N/A';
-    const [loading, setLoading] = useState(false); // For future API
     const [allEnrollments, setAllEnrollments] = useState([]);
     const [enrollmentsLoading, setEnrollmentsLoading] = useState(true);
     const [quizCourses, setQuizCourses] = useState([]);

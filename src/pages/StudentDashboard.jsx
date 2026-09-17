@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import { SkeletonLoader, EmptyState, AnimatedCounter } from '../components/UIUtils';
+import { SkeletonLoader, EmptyState } from '../components/UIUtils';
 import { useAuth } from '../context/AuthContext';
 import supabase from '../services/supabaseClient';
 import { formatDate, formatDateTime } from '../utils/formatDate';

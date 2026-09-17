@@ -2,10 +2,6 @@ import React, { useRef, useState } from 'react';
 import { AnimatedCounter, SkeletonLoader, EmptyState } from './components/UIUtils';
 import { useNavigate, Link } from 'react-router-dom';
 import heroIllustration from './assets/hero-illustration.svg';
-import iconLive from './assets/icon-live.svg';
-import iconProgress from './assets/icon-progress.svg';
-import iconSecure from './assets/icon-secure.svg';
-import avatarPlaceholder from './assets/avatar-placeholder.svg';
 import logoLight from './assets/logo-light.png';
 import logoDark from './assets/logo-dark.png';
 import { useTheme } from './context/ThemeContext';
@@ -18,19 +14,20 @@ function useScrollAnimation() {
   const [isVisible, setVisible] = useState(false);
 
   React.useEffect(() => {
+    const node = domRef.current;
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         setVisible(entry.isIntersecting);
       });
     }, { threshold: 0.1 });
 
-    if (domRef.current) {
-      observer.observe(domRef.current);
+    if (node) {
+      observer.observe(node);
     }
 
     return () => {
-      if (domRef.current) {
-        observer.unobserve(domRef.current);
+      if (node) {
+        observer.unobserve(node);
       }
     };
   }, []);
@@ -41,7 +38,6 @@ function useScrollAnimation() {
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
-  const navigate = useNavigate();
 
   return (
     <header className="navbar">
@@ -301,7 +297,7 @@ const FeaturesSection = () => {
 
 const CoursesPreview = () => {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false); // For future API integration
+  const [loading] = useState(false); // For future API integration
   const [ref, visible] = useScrollAnimation();
   const featured = courses.slice(0, 3);
 
