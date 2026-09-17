@@ -1,0 +1,36 @@
+[
+  {
+    "id": "admin1",
+    "name": "Akshay Kumar",
+    "email": "akshaykumar.sak6@gmail.com",
+    "password": "admin123",
+    "role": "admin"
+  },
+  {
+    "id": "staff1",
+    "name": "Dr.Kavita Rao",
+    "email": "kavitha.rao@astradex.com",
+    "department": "Science / Physics",
+    "joiningDate": "15 June 2023",
+    "password": "staffcredentials",
+    "role": "staff"
+  },
+  {
+    "id": "bc27d54d-1bae-445a-af14-cd72a4044f0f",
+    "name": "Achu",
+    "email": "achyutha42@gmail.com",
+    "password": "achyu",
+    "grade": "XII",
+    "school": "tvs",
+    "role": "student"
+  },
+  {
+    "id": "f4568c67-a7cf-4bf2-8556-c53f6a1263a8",
+    "name": "Kishore",
+    "email": "kishore@gmail.com",
+    "password": "kishore@02",
+    "grade": "XI",
+    "school": "tvs",
+    "role": "student"
+  }
+]
